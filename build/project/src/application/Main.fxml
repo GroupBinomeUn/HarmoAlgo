@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Menu">
+          <items>
+                  <MenuItem mnemonicParsing="false" onAction="#main" text="Accueil" />
+            <MenuItem mnemonicParsing="false" text="Charger" />
+            <MenuItem mnemonicParsing="false" text="Sauvegarder" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Quitter" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Choix">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#pane_addPeople" text="Ajout" />
+            <MenuItem mnemonicParsing="false" onAction="#pane_deletePeople" text="Suppression" />
+                  <MenuItem mnemonicParsing="false" onAction="#pane_viewPeoples" text="Rechercher" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Pane fx:id="addPeople" prefHeight="385.0" prefWidth="650.0" visible="false">
+               <children>
+                  <Label layoutX="65.0" layoutY="30.0" text="Rechercher" />
+                  <TextField fx:id="txt_searchPeople" layoutX="155.0" layoutY="26.0" onKeyReleased="#searchPeople" />
+                  <TreeView fx:id="tr_viewPeoples" layoutX="65.0" layoutY="61.0" prefHeight="299.0" prefWidth="239.0" />
+                  <Label layoutX="347.0" layoutY="63.0" text="Nom" />
+                  <Label layoutX="347.0" layoutY="109.0" text="Prenom" />
+                  <Label layoutX="346.0" layoutY="154.0" text="Portable" />
+                  <Label layoutX="349.0" layoutY="202.0" text="Ville" />
+                  <Label layoutX="348.0" layoutY="244.0" text="Code Postal" />
+                  <Label layoutX="348.0" layoutY="287.0" text="Adresse" />
+                  <TextField fx:id="txt_lastName" layoutX="436.0" layoutY="59.0" />
+                  <TextField fx:id="txt_firstName" layoutX="436.0" layoutY="105.0" />
+                  <TextField fx:id="txt_phone" layoutX="436.0" layoutY="150.0" onKeyReleased="#onlyNumberPhone" />
+                  <TextField fx:id="txt_city" layoutX="436.0" layoutY="198.0" />
+                  <TextField fx:id="txt_postalCode" layoutX="436.0" layoutY="240.0" onKeyReleased="#onlyNumberPostalCode" onKeyTyped="#limitInputPostalCode" />
+                  <TextField fx:id="txt_address" layoutX="436.0" layoutY="283.0" />
+                  <Button fx:id="btn_addPeople" layoutX="455.0" layoutY="335.0" mnemonicParsing="false" text="Ajouter" />
+               </children></Pane>
+            <Pane fx:id="deletePeople" prefHeight="385.0" prefWidth="650.0" visible="false">
+               <children>
+                  <ComboBox fx:id="combo_deletePeople" layoutX="59.0" layoutY="56.0" prefHeight="25.0" prefWidth="226.0" />
+                  <Label layoutX="380.0" layoutY="155.0" text="Supprimer la personne sélectionnée" />
+                  <Button fx:id="btn_deletePeople" layoutX="439.0" layoutY="206.0" mnemonicParsing="false" text="Supprimer" />
+               </children></Pane>
+            <Pane fx:id="viewPeoples" prefHeight="385.0" prefWidth="650.0" visible="false">
+               <children>
+                  <ChoiceBox fx:id="choiceBox_filterPeoples" layoutX="70.0" layoutY="20.0" onAction="#typeFilterPeoples" prefHeight="25.0" prefWidth="95.0" />
+                  <TextField fx:id="txt_filterPeoples" layoutX="191.0" layoutY="20.0" onKeyReleased="#filterPeoples" />
+                  <TableView fx:id="tb_viewPeoples" layoutX="33.0" layoutY="55.0" prefHeight="275.0" prefWidth="585.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="main" prefHeight="385.0" prefWidth="650.0">
+               <children>
+                  <Label layoutX="170.0" layoutY="20.0" text="Carnet d'adresses">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="221.0" fitWidth="226.0" layoutX="212.0" layoutY="114.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/images/book.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
