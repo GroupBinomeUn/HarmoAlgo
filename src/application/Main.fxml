@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.input.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
@@ -68,7 +64,7 @@
                </children></Pane>
             <Pane fx:id="viewPeoples" prefHeight="385.0" prefWidth="650.0" visible="false">
                <children>
-                  <ChoiceBox fx:id="choiceBox_filterPeoples" layoutX="70.0" layoutY="20.0" onAction="#typeFilterPeoples" prefHeight="25.0" prefWidth="95.0" />
+                  <ChoiceBox fx:id="choiceBox_filterPeoples" onMou="#typeFilterPeoples" layoutX="70.0" layoutY="20.0" prefHeight="25.0" prefWidth="95.0" />
                   <TextField fx:id="txt_filterPeoples" layoutX="191.0" layoutY="20.0" onKeyReleased="#filterPeoples" />
                   <TableView fx:id="tb_viewPeoples" layoutX="33.0" layoutY="55.0" prefHeight="275.0" prefWidth="585.0">
                     <columns>

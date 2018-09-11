@@ -21,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class Controller implements Initializable{
@@ -150,11 +151,12 @@ public class Controller implements Initializable{
     public void filterPeoples(KeyEvent event) {
     	Pane_Search.search(txt_filterPeoples, choiceBox_filterPeoples, tb_viewPeoples);
     }
-    public void typeFilterPeoples(ActionEvent event) {
+
+    public void typeFilterPeoples(MouseEvent event) {
     	Pane_Search.search(txt_filterPeoples, choiceBox_filterPeoples, tb_viewPeoples);
     }
-    
-    
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // TODO Auto-generated method stub
