@@ -68,7 +68,11 @@
                </children></Pane>
             <Pane fx:id="viewPeoples" prefHeight="385.0" prefWidth="650.0" visible="false">
                <children>
+<<<<<<< HEAD
                   <ChoiceBox fx:id="choiceBox_filterPeoples" onMouseReleased="#typeFilterPeoples" layoutX="70.0" layoutY="20.0" prefHeight="25.0" prefWidth="95.0" />
+=======
+                  <ChoiceBox fx:id="choiceBox_filterPeoples" onAction="#typeFilterPeoples" layoutX="70.0" layoutY="20.0" prefHeight="25.0" prefWidth="95.0" />
+>>>>>>> 91781643e9238e61467d75200cd3c0e573b5d0ea
                   <TextField fx:id="txt_filterPeoples" layoutX="191.0" layoutY="20.0" onKeyReleased="#filterPeoples" />
                   <TableView fx:id="tb_viewPeoples" layoutX="33.0" layoutY="55.0" prefHeight="275.0" prefWidth="585.0">
                     <columns>

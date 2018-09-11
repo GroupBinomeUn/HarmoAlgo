@@ -152,7 +152,7 @@ public class Controller implements Initializable{
     	Pane_Search.search(txt_filterPeoples, choiceBox_filterPeoples, tb_viewPeoples);
     }
 
-    public void typeFilterPeoples(MouseEvent event) {
+    public void typeFilterPeoples(ActionEvent event) {
     	Pane_Search.search(txt_filterPeoples, choiceBox_filterPeoples, tb_viewPeoples);
     }
 
