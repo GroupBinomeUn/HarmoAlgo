@@ -1,5 +1,6 @@
 package application;
 
+import java.awt.event.MouseMotionListener;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -21,6 +22,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
@@ -69,7 +72,7 @@ public class Controller implements Initializable{
     
     @FXML
     ChoiceBox<String> choiceBox_filterPeoples;
-    
+
     public void limitInputPostalCode(KeyEvent event) {                       
     	 if(txt_postalCode.getText().length()>=5) {
     		 event.consume();
@@ -152,8 +155,12 @@ public class Controller implements Initializable{
     	Pane_Search.search(txt_filterPeoples, choiceBox_filterPeoples, tb_viewPeoples);
     }
 
-    public void typeFilterPeoples(ActionEvent event) {
+    public void typeFilterPeoples(KeyEvent event) {
     	Pane_Search.search(txt_filterPeoples, choiceBox_filterPeoples, tb_viewPeoples);
+    }
+
+    public void typeFilterPeoplesText(MouseEvent mevent) {
+        Pane_Search.search(txt_filterPeoples, choiceBox_filterPeoples, tb_viewPeoples);
     }
 
 
